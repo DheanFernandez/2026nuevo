@@ -90,15 +90,17 @@ body, html {
 .button-container {
     display: none;
     position: absolute;
-    bottom: 20px;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
 }
 
 #triggerButton {
     padding: 15px 30px;
     font-size: 1.5rem;
-    background-color: #ffcc00;
-    color: black;
+    background-color: #d32f2f; /* Fondo rojo */
+    color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -106,7 +108,7 @@ body, html {
 }
 
 #triggerButton:hover {
-    background-color: #ff9900;
+    background-color: #c2185b; /* Un rojo más oscuro */
 }
 
 /* Mensaje final en una tarjeta con fondo blanco y letras negras */
@@ -138,18 +140,6 @@ body, html {
     }
 }
 
-/* Animación para el efecto de explosión */
-@keyframes explodeEffect {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(3);
-        opacity: 0;
-    }
-}
-
 /* Ajustes de tamaño para pantallas móviles */
 @media (max-width: 768px) {
     .explosion h1 {
@@ -166,3 +156,5 @@ body, html {
         bottom: 60px;
     }
 }
+
+
