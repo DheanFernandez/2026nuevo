@@ -12,8 +12,6 @@ window.onload = function() {
     
     // Esperar que la animación termine para mostrar la explosión y el botón
     firework.addEventListener('animationend', function() {
-        // Generar un destello explosivo antes de mostrar el mensaje
-        createExplosionEffect();
         explosion.style.display = 'block';
         buttonContainer.style.display = 'block';
     });
@@ -40,18 +38,5 @@ function createStars(number) {
         star.style.left = `${Math.random() * 100}vw`;
         star.style.animationDuration = `${Math.random() * 1 + 1}s`; // Duración aleatoria
         body.appendChild(star);
-    }
-}
-
-// Función para crear un destello explosivo (similar a la imagen de fuegos artificiales)
-function createExplosionEffect() {
-    const body = document.body;
-    for (let i = 0; i < 10; i++) {
-        let explosionCircle = document.createElement('div');
-        explosionCircle.classList.add('explosion-circle');
-        explosionCircle.style.width = `${Math.random() * 40 + 30}px`; // Tamaño aleatorio
-        explosionCircle.style.height = explosionCircle.style.width;
-        explosionCircle.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`; // Colores aleatorios
-        body.appendChild(explosionCircle);
     }
 }
