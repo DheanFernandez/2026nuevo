@@ -29,7 +29,7 @@ body, html {
     position: absolute;
     background-color: #fff;
     border-radius: 50%;
-    animation: shine 2s infinite alternate;
+    animation: shine 4s infinite alternate;
 }
 
 /* Animación de la luz (fuegos artificiales) */
@@ -64,8 +64,12 @@ body, html {
         transform: scale(1);
         opacity: 0;
     }
+    50% {
+        transform: scale(1.5); /* Escalado temporal */
+        opacity: 1;
+    }
     100% {
-        transform: scale(5);
+        transform: scale(1); /* Regresa al tamaño original */
         opacity: 1;
     }
 }
@@ -80,10 +84,10 @@ body, html {
 }
 
 .explosion h1 {
-    font-size: 2.5rem;
+    font-size: 5vw; /* Tamaño dinámico según el ancho de la pantalla */
     color: #ffcc00;
     font-family: 'Times New Roman', Times, serif; /* Fuente Times New Roman */
-    animation: explosion 1s ease-out forwards;
+    animation: explosion 4s ease-out forwards;
 }
 
 /* Botón para interacción */
@@ -143,7 +147,7 @@ body, html {
 /* Ajustes de tamaño para pantallas móviles */
 @media (max-width: 768px) {
     .explosion h1 {
-        font-size: 2rem;
+        font-size: 7vw; /* Ajustar el tamaño a un 7% del ancho de la pantalla */
     }
 
     #triggerButton {
@@ -156,5 +160,4 @@ body, html {
         bottom: 60px;
     }
 }
-
 
