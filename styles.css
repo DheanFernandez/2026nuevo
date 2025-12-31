@@ -1,0 +1,168 @@
+/* Estilo básico del fondo y texto */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #0c0c0c;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Puntos brillantes en el fondo */
+@keyframes shine {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0.2;
+    }
+}
+
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: shine 2s infinite alternate;
+}
+
+/* Animación de la luz (fuegos artificiales) */
+.firework {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    animation: rise 3s ease-in-out forwards;
+}
+
+@keyframes rise {
+    0% {
+        bottom: 10px;
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        bottom: 50%;
+        opacity: 0;
+    }
+}
+
+/* Estallido de fuegos artificiales antes de mostrar FELIZ 2026 */
+@keyframes explosion {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 1;
+    }
+}
+
+.explosion {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.explosion h1 {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    font-family: 'Times New Roman', Times, serif; /* Fuente Times New Roman */
+    animation: explosion 1s ease-out forwards;
+}
+
+/* Botón para interacción */
+.button-container {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+}
+
+#triggerButton {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#triggerButton:hover {
+    background-color: #ff9900;
+}
+
+/* Mensaje final en una tarjeta con fondo blanco y letras negras */
+.message-container {
+    display: none;
+    position: absolute;
+    bottom: 80px;
+    text-align: center;
+    padding: 20px;
+    background-color: white; /* Fondo blanco */
+    color: black; /* Letras negras */
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    animation: scaleUp 0.5s forwards;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animación para el efecto de explosión */
+@keyframes explodeEffect {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* Ajustes de tamaño para pantallas móviles */
+@media (max-width: 768px) {
+    .explosion h1 {
+        font-size: 2rem;
+    }
+
+    #triggerButton {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+    }
+
+    .message-container {
+        font-size: 1rem;
+        bottom: 60px;
+    }
+}
